@@ -1,0 +1,230 @@
+:root {
+    --pri: #EEEFE0;
+    --sec: #D1D8BE;
+    --tri1: #A7C1A8;
+    --tri2: #819A91;
+    --green: rgba(79, 188, 75, 0.959);
+    --red:red;
+    --black: black;
+    --white: white;
+}
+
+@font-face {
+    font-family: aeonic;
+    font-weight: 700;
+    src: url(../font/AeonikTRIAL-Bold.otf);
+}
+
+@font-face {
+    font-family: aeonic;
+    font-weight: 200;
+    src: url(../font/AeonikTRIAL-Light.otf);
+}
+
+@font-face {
+    font-family: aeonic;
+    font-weight: 500;
+    src: url(../font/AeonikTRIAL-Regular.otf);
+}
+
+body.dark-mode {
+  --pri: #1a1a1a;
+  --sec: #2a2a2a;
+  --tri1: #444;
+  --tri2: #666;
+  --black: white;
+  --white: black;
+  color: var(--black);
+  background-color: var(--pri);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'gilroy';
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+    padding: 2vw;
+}
+
+.page {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.page .left {
+    width: 20%;
+    background-color: var(--pri);
+    padding: 1vw;
+}
+
+.page .left h2{
+    text-transform: uppercase; 
+  font-weight: 800;
+  margin-top: 1vw;
+}
+
+.left .files{
+   margin-top: 2vw;
+   display: flex;
+   flex-direction: column-reverse;
+   gap: 1vw;
+}
+
+.left .files h3{
+  border-radius: 1vw;
+  font-weight: 700;
+  font-size: 1.5vw;
+  padding: 5px 10px;
+  background-color: var(--sec);
+  transition: all ease 0.2s;
+}
+.left .files h3:active{
+    scale:0.96;
+}
+
+.left #add-block{
+    padding: .8vw 2.5vw;
+    margin-top: 1vw;
+    background-color: var(--green);
+    border: none;
+    color: var(--white);
+    border-radius: 10px;
+    transition: all ease 0.2s;
+}
+.left #add-block:active{
+     scale:0.96;
+}
+
+.left .use{
+    padding: .8vw 1.5vw;
+     margin-top: 1vw;
+    background-color: lightblue;
+    border: none;
+    color: black;
+    border-radius: 10px;
+    transition: all ease 0.2s;
+}
+.left .use:active{
+     scale:0.96;
+}
+
+
+.page .right {
+    width: 80%;
+    background-color: var(--sec);
+    padding: 2vw 2vw;
+}
+
+.page .right nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.page .right nav h1{
+    font-size: 3vw;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.page .right nav .nav-2{
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+}
+
+.page .right nav .nav-2 .search{
+    padding: .5vw 1.5vw;
+    border-radius: 0.8vw;
+    outline: none;
+    font-size: 1vw;
+    border: none;
+}
+
+.page .right nav .nav-2 #mode{
+   background-color: var(--pri);
+   padding: .6vw;
+   font-weight: 700;
+   transition: all ease 0.2s;
+}
+.page .right nav .nav-2 #mode:active{
+    scale: .96;
+}
+
+.page .right nav .nav-2 #down{
+   background-color: var(--pri);
+   padding: .6vw;
+   font-weight: 700;
+   transition: all ease 0.2s;
+}
+.page .right nav .nav-2 #down:active{
+     scale: .96;
+}
+
+.page .right .right-side{
+    margin-top: 3vw;
+    height: 80%;
+    background-color: var(--pri);
+}
+
+.page .right .right-side h3{
+    text-align: end;
+    padding: .5vw;
+    margin-right: .7vw;
+    color: rgba(248, 67, 67, 0.628);
+}
+
+.page .right .right-side #note{
+    height: 85%;
+    width: 100%;
+    border: none;
+    outline:none;
+    overflow: auto;
+}
+
+#note {
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
+}
+
+#note::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.right-side.focused {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: var(--pri);
+  padding: 2vw;
+  overflow-y: auto;
+}
+
+.block .content {
+  padding: 10px;
+  min-height: 40px;
+  border: 1px solid var(--tri2);
+  margin-bottom: 10px;
+  border-radius: 6px;
+  background: var(--white);
+}
+
+
+.block.drop-target{
+  outline: 3px dashed red;
+  outline-offset: -4px;
+}
